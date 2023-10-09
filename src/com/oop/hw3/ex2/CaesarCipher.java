@@ -24,7 +24,8 @@ public class CaesarCipher {
 
             // Check if the character is a letter
             if (Character.isLetter(character)) {
-                cipherText.append((char) ((character - 'A' + shift) % 26 + 'A'));
+                char encryptedChar = (char) ((character - 'A' + shift) % 26 + 'A');
+                cipherText.append(encryptedChar);
             } else {
                 // If it's not a letter, leave it unchanged
                 cipherText.append(character);

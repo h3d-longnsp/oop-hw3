@@ -2,7 +2,7 @@ package com.oop.hw3.ex1;
 
 public class Factorial {
     public static void main(String[] args) {
-        long input = 20;
+        int input = 20;
         System.out.printf("Factorial of %d is %d.\n", input, factorial(input));
     }
 

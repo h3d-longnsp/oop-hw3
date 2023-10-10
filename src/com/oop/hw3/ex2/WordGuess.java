@@ -11,27 +11,33 @@ public class WordGuess {
         }
 
         String wordToGuess = args[0];
-        int wordLength = wordToGuess.length();
+
+        initGame(wordToGuess);
+    }
+
+    public static void initGame(String keyword) {
+        int trials = 0;
+        int wordLength = keyword.length();
+
         char[] guessedWord = new char[wordLength];
         boolean[] guessedLetters = new boolean[wordLength];
-        int trials = 0;
 
         Arrays.fill(guessedWord, '_');
-
-        System.out.println("Word to guess: " + new String(guessedWord));
+        System.out.printf("Word to guess: %s\n", new String(guessedWord));
 
         Scanner scanner = new java.util.Scanner(System.in);
 
         while (true) {
             System.out.print("Key in one character or your guess word: ");
-            String input = scanner.nextLine();
+            String input = scanner.nextLine().toLowerCase();
 
+            // When user guess 1 character
             if (input.length() == 1) {
                 trials++;
                 char guess = input.charAt(0);
 
                 for (int i = 0; i < wordLength; i++) {
-                    if (wordToGuess.charAt(i) == guess && !guessedLetters[i]) {
+                    if (keyword.charAt(i) == guess && !guessedLetters[i]) {
                         guessedWord[i] = guess;
                         guessedLetters[i] = true;
                     }
@@ -40,11 +46,11 @@ public class WordGuess {
                 System.out.print("Trial " + trials + ": ");
                 System.out.println(new String(guessedWord));
 
-                if (new String(guessedWord).equals(wordToGuess)) {
+                if (new String(guessedWord).equals(keyword)) {
                     System.out.println("Congratulations! You got it in " + trials + " trials.");
                     break;
                 }
-            } else if (input.equals(wordToGuess)) {
+            } else if (input.equals(keyword)) { // When user guess the whole word
                 trials++;
                 System.out.println("Congratulations! You got it in " + trials + " trials.");
                 break;

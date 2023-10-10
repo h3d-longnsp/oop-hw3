@@ -2,8 +2,8 @@ package com.oop.hw3.ex1;
 
 public class RunningNumberLength {
     public static void main(String[] args) {
-        int input = 3;
-        System.out.printf("Length of S(%d) is: %d", input, calculateLength(input));
+        int input = 12;
+        System.out.printf("Length of S(%d) is: %d", input, calculateLength(input)); // S(12) = 15
     }
 
     public static int calculateLength(int n) {
@@ -13,6 +13,7 @@ public class RunningNumberLength {
             return calculateLength(n - 1) + numberOfDigits(n);
         }
     }
+
     public static int numberOfDigits(int num) {
         if (num == 0) {
             return 0;

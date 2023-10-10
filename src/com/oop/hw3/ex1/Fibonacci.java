@@ -2,8 +2,8 @@ package com.oop.hw3.ex1;
 
 public class Fibonacci {
     public static void main(String[] args) {
-        int input = 2;
-        System.out.printf("F(%d) = %d.\n", input, fibonacci(input));
+        int input = 15;
+        System.out.printf("F(%d) = %d.\n", input, fibonacci(input)); // F(15) = 610
     }
 
     public static int fibonacci(long number) {

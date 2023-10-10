@@ -43,21 +43,20 @@ public class WordGuess {
                     }
                 }
 
-                System.out.print("Trial " + trials + ": ");
+                System.out.printf("Trial: %d | ", trials);
                 System.out.println(new String(guessedWord));
 
                 if (new String(guessedWord).equals(keyword)) {
-                    System.out.println("Congratulations! You got it in " + trials + " trials.");
+                    System.out.printf("Congratulations! You got it in %d trials.\n", trials);
                     break;
                 }
             } else if (input.equals(keyword)) { // When user guess the whole word
                 trials++;
-                System.out.println("Congratulations! You got it in " + trials + " trials.");
+                System.out.printf("Congratulations! You got it in %d trials.\n", trials);
                 break;
             } else {
                 trials++;
-                System.out.print("Trial " + trials + ": ");
-                System.out.println("Incorrect guess. Try again.");
+                System.out.printf("Trial: %d. Incorrect guess. Try again.\n", trials);
             }
         }
 

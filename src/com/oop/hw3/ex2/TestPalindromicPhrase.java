@@ -11,9 +11,9 @@ public class TestPalindromicPhrase {
         scanner.close();
 
         if (isPalindromicPhrase(input)) {
-            System.out.printf("\"%s\" is a palindrome.\n", input);  // "A man, a plan, a canal, Panama!" is a palindrome
+            System.out.printf("\"%s\" is a palindrome.\n", input);  // "Was it a car or a cat I saw?" is a palindrome
         } else {
-            System.out.printf("%s is not a palindrome.\n", input); // "This is not a palindrome" is not a palindrome
+            System.out.printf("\"%s\" is not a palindrome.\n", input); // "This is not a palindrome" is not a palindrome
         }
     }
 
